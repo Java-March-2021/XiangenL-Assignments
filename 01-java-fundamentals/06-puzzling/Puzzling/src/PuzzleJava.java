@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Random;
 import java.lang.CharSequence;
@@ -13,6 +14,7 @@ public class PuzzleJava {
 		printAlphabet();
 		randomInteger(55, 100);
 		randomString(5);
+		randomStringArr(10);
 	}
 	public static ArrayList<Integer> greaterTen(int[] arr, int num) {
 		ArrayList<Integer> list = new ArrayList<Integer>();
@@ -76,7 +78,7 @@ public class PuzzleJava {
 		return r;
 	}
 	// Create a random string that is 5 characters long.
-	public static Random randomString(int n) {
+	public static String randomString(int n) {
 		Random r = new Random();
 		StringBuilder ranName = new StringBuilder();
 		ArrayList<Character> alphabet = new ArrayList<Character>();
@@ -87,7 +89,17 @@ public class PuzzleJava {
 			int number = r.nextInt(25);
 			ranName.append(alphabet.get(number));		
 		}
-		System.out.println(ranName);
-		return r;	
+		System.out.println(ranName.toString());
+		return ranName.toString();	
+	}
+	// Generate an array with 10 random strings that are each 5 characters long
+	public static void randomStringArr(int n) {
+		ArrayList<String> list = new ArrayList<String>();
+		for (int i = 0; i < n; i++) {
+			String ranName = randomString(5);
+			String name = ranName.toString();
+			list.add(name);	
+		}
+		System.out.println(list); 
 	}
 }
