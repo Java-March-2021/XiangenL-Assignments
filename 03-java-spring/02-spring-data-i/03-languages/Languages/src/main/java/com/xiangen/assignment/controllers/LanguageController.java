@@ -49,22 +49,6 @@ public class LanguageController {
 		return "redirect:/languages";
 	}
 	
-//	@PostMapping("/languages/add")
-//	public String addLan(@RequestParam("name") String name, @RequestParam("creator") String creator, @RequestParam("version") Float version, RedirectAttributes redirectAttr) {
-//		ArrayList<String> errors = new ArrayList<String>();
-//		if(name.equals("")) {
-//			errors.add("Name should not be an blank.");
-//		}
-//		if(errors.size() > 0) {
-//			for(String e: errors) {
-//				redirectAttr.addFlashAttribute("errors", e);
-//			}
-//			return "redirect:/languages/add";
-//		}
-//		this.dService.createNewDog(name, breed, age);
-//		return "redirect:/";
-//	}
-	
 	// edit, update
 	@GetMapping(value="/languages/edit/{id}")
 	public String editLan(@PathVariable("id") Long id, Model model, @ModelAttribute("language") Language language) {
