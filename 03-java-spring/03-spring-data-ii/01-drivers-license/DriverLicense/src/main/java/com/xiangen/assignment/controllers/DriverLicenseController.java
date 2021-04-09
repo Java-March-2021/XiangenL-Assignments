@@ -57,7 +57,6 @@ public class DriverLicenseController {
 	public String addLicense(@ModelAttribute("license") License license, Model model) {
 		List<Person> unLicensedPersons = this.dService.getUnlicensedPeople();
 		model.addAttribute("persons", unLicensedPersons);
-//		model.addAttribute("persons", this.dService.getAllPersons());
 		return "addLicense.jsp";
 	}
 	
